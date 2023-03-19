@@ -12,7 +12,6 @@ class Snake:
             s.setposition(y=0, x=0 - _ * 20)
             self.snake_list.append(s)
 
-
     def move(self):
         for segments in range(len(self.snake_list) - 1, 0, -1):
             position = self.snake_list[segments - 1].pos()
