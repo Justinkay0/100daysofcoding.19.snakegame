@@ -21,6 +21,6 @@ game_state = True
 while game_state:
     snake.move()
     screen.update()
-    sleep(0.15)
+    sleep(0.1)
 
 screen.exitonclick()

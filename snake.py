@@ -1,4 +1,8 @@
 from turtle import Turtle
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
 
 
 class Snake:
@@ -11,6 +15,7 @@ class Snake:
             s.color('white')
             s.setposition(y=0, x=0 - _ * 20)
             self.snake_list.append(s)
+        self.head = self.snake_list[0]
 
     def move(self):
         for segments in range(len(self.snake_list) - 1, 0, -1):
@@ -19,13 +24,17 @@ class Snake:
         self.snake_list[0].forward(20)
 
     def left(self):
-        self.snake_list[0].setheading(180)
+        if self.head.heading() != RIGHT:
+            self.head.setheading(LEFT)
 
     def up(self):
-        self.snake_list[0].setheading(90)
+        if self.head.heading() != DOWN:
+            self.head.setheading(UP)
 
     def right(self):
-        self.snake_list[0].setheading(0)
+        if self.head.heading() != LEFT:
+            self.head.setheading(RIGHT)
 
     def down(self):
-        self.snake_list[0].setheading(270)
+        if self.head.heading() != UP:
+            self.head.setheading(DOWN)
