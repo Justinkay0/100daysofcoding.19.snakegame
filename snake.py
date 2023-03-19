@@ -17,3 +17,15 @@ class Snake:
             position = self.snake_list[segments - 1].pos()
             self.snake_list[segments].goto(x=position[0], y=position[1])
         self.snake_list[0].forward(20)
+
+    def left(self):
+        self.snake_list[0].setheading(180)
+
+    def up(self):
+        self.snake_list[0].setheading(90)
+
+    def right(self):
+        self.snake_list[0].setheading(0)
+
+    def down(self):
+        self.snake_list[0].setheading(270)
